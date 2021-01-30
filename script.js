@@ -2,12 +2,12 @@ const handleRates = (ratesData) => {
   const currencyList = document.querySelector('#currency-list');
 
   const entries = Object.entries(ratesData.rates);
-  
+
   entries.forEach((array) => {
     const [ currency, rate ] = array;
 
     const formattedRate = Math.round(rate * 100) / 100;
-    
+
     const li = document.createElement('li');
     li.innerHTML = `<strong>${currency}:</strong> ${formattedRate}`
 
@@ -17,10 +17,10 @@ const handleRates = (ratesData) => {
 
 const fetchCurrency = (currency) => {
   const endpoint = `https://api.ratesapi.io/api/latest?base=${currency}`;
-  
+
   fetch(endpoint)
     .then((response) => response.json())
-    .then((object) => { 
+    .then((object) => {
       if (object.error) {
         throw new Error(object.error);
       }
@@ -50,8 +50,8 @@ const fetchCurrencyAsyncAwait = async (currency) => {
   } catch (error) {
     window.alert(error);
   }
-  
-  
+
+
 }
 
 const clearList = () => {
@@ -70,6 +70,12 @@ const handleSearchEvent = () => {
 
 const setupEvents = () => {
   const searchButton = document.querySelector('#search-button');
+  const clearButton = document.querySelector('#clear-button');
+  const currencyList = document.querySelector('#currency-list');
+
+  clearButton.addEventListener('click', function(){
+    currencyList.innerHTML = '';
+  });
   searchButton.addEventListener('click', handleSearchEvent);
 }
 
