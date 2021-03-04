@@ -6,10 +6,6 @@ Nesse site utilizamos o serviço ratesapi.io
 
 ## Bônus para praticar 💚
 
-> Preparamos essa lista de exercícios **NÃO OBRIGATÓRIOS** para vocês se divertirem 🙂
-
-> *Não haverá correção automatizada pelo avaliador.*
-
 1. Adicione um botão "limpar" que, ao ser clicado, apaga toda a listagem de moedas.
 
 2. Ordene a lista de moedas por ordem alfabética.
